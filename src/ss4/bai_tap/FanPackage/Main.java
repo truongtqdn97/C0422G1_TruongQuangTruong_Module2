@@ -1,4 +1,4 @@
-package ss5.bai_tap.FanPackage;
+package ss4.bai_tap.FanPackage;
 
 public class Main {
     public static void main(String[] args) {

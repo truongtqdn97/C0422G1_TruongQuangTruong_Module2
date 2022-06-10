@@ -1,4 +1,4 @@
-package ss5.thuc_hanh;
+package ss4.thuc_hanh;
 
 import java.util.Scanner;
 
