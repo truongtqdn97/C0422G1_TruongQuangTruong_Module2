@@ -35,9 +35,9 @@ public class TennisGame {
         String score = "";
         int tempScore;
         if (scorePlayer1 == scorePlayer2) {
-            tieScore(scorePlayer1);
+            score = tieScore(scorePlayer1);
         } else if (scorePlayer1 >= 4 || scorePlayer2 >= 4) {
-            advantagePlayer(scorePlayer1,scorePlayer2);
+            score = advantagePlayer(scorePlayer1,scorePlayer2);
         } else {
             for (int i = 1; i < 3; i++) {
                 if (i == 1) tempScore = scorePlayer1;
