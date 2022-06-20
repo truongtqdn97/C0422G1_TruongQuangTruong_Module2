@@ -8,7 +8,7 @@ public class Palindrome {
     public static boolean isPalindrome(String str){
         Stack<Character> characterStack = new Stack<>();
         Queue<Character> characterArrayDeque = new ArrayDeque<>();
-        char[] chars = str.toCharArray();
+        char[] chars = str.toLowerCase().toCharArray();
         for (char aChar : chars) {
             characterStack.push(aChar);
             characterArrayDeque.add(aChar);
