@@ -1,11 +1,14 @@
 package ss11.bai_tap;
 
-import java.util.*;
+import java.util.ArrayDeque;
+import java.util.Queue;
+import java.util.Scanner;
+import java.util.Stack;
 
 public class Palindrome {
     static Scanner scanner = new Scanner(System.in);
 
-    public static boolean isPalindrome(String str){
+    public static boolean isPalindrome(String str) {
         Stack<Character> characterStack = new Stack<>();
         Queue<Character> characterArrayDeque = new ArrayDeque<>();
         char[] chars = str.toLowerCase().toCharArray();
@@ -15,7 +18,7 @@ public class Palindrome {
         }
 
         for (int i = 0; i < chars.length; i++) {
-            if (characterStack.pop()!=characterArrayDeque.poll()){
+            if (characterStack.pop() != characterArrayDeque.poll()) {
                 return false;
             }
         }
