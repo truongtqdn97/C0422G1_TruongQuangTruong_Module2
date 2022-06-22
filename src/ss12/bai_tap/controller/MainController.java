@@ -30,6 +30,7 @@ public class MainController {
                     break;
                 case 3:
                     productManager.delete();
+                    break;
                 case 4:
                     productManager.display();
                     break;

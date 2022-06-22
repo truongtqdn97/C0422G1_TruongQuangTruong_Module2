@@ -41,9 +41,15 @@ public class ProductManager implements IProductManager{
     @Override
     public void edit() {
         int id;
+        if (productList.isEmpty()){
+            System.out.println("There is 0 product in line.");
+            return;
+        }
         do {
-            System.out.print("Enter id of product need to edit: ");
+            System.out.print("Enter id of product need to edit: " +
+                    "\nEnter -1 to exit editing.");
             id = Integer.parseInt(scanner.nextLine());
+            if (id == -1) return;
             if (!isIdExist(id)) System.out.println("Id is not exist in line." +
                     "\nEnter id again!");
         } while (!isIdExist(id));
@@ -72,6 +78,7 @@ public class ProductManager implements IProductManager{
             if (id == productList.get(i).getId())
                 productList.remove(i);
         }
+        display();
     }
 
     public void display() {
