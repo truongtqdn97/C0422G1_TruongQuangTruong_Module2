@@ -1,9 +1,11 @@
-package ss12.bai_tap;
+package ss12.bai_tap.controller;
+
+import ss12.bai_tap.service.ProductManager;
 
 import java.util.Scanner;
 
 public class MainController {
-    static Scanner scanner = new Scanner(System.in);
+    private static Scanner scanner = new Scanner(System.in);
 
     public static void displayMenu() {
         ProductManager productManager = new ProductManager();
@@ -32,10 +34,10 @@ public class MainController {
                     productManager.display();
                     break;
                 case 5:
-                    productManager.search();
+                    productManager.searchByName();
                     break;
                 case 6:
-                    productManager.sort();
+                    productManager.sortByPrice();
                     break;
                 case 7:
                     System.out.println("Exit the application!");
@@ -46,7 +48,4 @@ public class MainController {
         } while (choice != 7);
     }
 
-    public static void main(String[] args) {
-        displayMenu();
-    }
 }

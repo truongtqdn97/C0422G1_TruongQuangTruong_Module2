@@ -1,10 +1,14 @@
-package ss12.bai_tap;
+package ss12.bai_tap.service;
+
+import ss12.bai_tap.model.Product;
+import ss12.bai_tap.util.ProductSortAscending;
+import ss12.bai_tap.util.ProductSortDescending;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
 
-public class ProductManager {
+public class ProductManager implements IProductManager{
     static Scanner scanner = new Scanner(System.in);
     public static ArrayList<Product> productList = new ArrayList<>();
 
@@ -15,6 +19,7 @@ public class ProductManager {
         return false;
     }
 
+    @Override
     public void addNew() {
         int id;
         do {
@@ -33,6 +38,7 @@ public class ProductManager {
         display();
     }
 
+    @Override
     public void edit() {
         int id;
         do {
@@ -80,7 +86,7 @@ public class ProductManager {
         }
     }
 
-    public void search() {
+    public void searchByName() {
         System.out.print("Enter name: ");
         String name = scanner.nextLine();
 
@@ -93,7 +99,7 @@ public class ProductManager {
         System.out.println("Product does not exist in line");
     }
 
-    public void sort() {
+    public void sortByPrice() {
         ProductSortAscending productSortAscending = new ProductSortAscending();
         ProductSortDescending productSortDescending = new ProductSortDescending();
         System.out.println("Which sort do you want? " +

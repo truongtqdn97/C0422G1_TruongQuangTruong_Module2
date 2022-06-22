@@ -1,4 +1,6 @@
-package ss12.bai_tap;
+package ss12.bai_tap.util;
+
+import ss12.bai_tap.model.Product;
 
 import java.util.Comparator;
 
