@@ -11,15 +11,18 @@ public class MaxAscendingString {
         String string = scanner.nextLine();
 
         ArrayList<Character> list = new ArrayList<>();
-            list.add(string.charAt(0));
-
-            for (int j = 1; j < string.length(); j++) {
-                if (string.charAt(j) > list.get(list.size() - 1)) {
-                    list.add(string.charAt(j));
-                }
+        ArrayList<Character> max = new ArrayList<>();
+        for (int i = 0; i < string.length(); i++) {
+            if (list.size() > 1 && string.charAt(i) < list.get(list.size() - 1)) {
+                list.clear();
             }
-
-        for (Character ch : list) {
+            list.add(string.charAt(i));
+            if (list.size() > max.size()) {
+                max.clear();
+                max.addAll(list);
+            }
+        }
+        for (Character ch : max) {
             System.out.print(ch);
         }
     }

@@ -1,24 +1,27 @@
 package TestingProgramming;
 
+import java.util.Scanner;
+
 public class test {
     public static void main(String[] args) {
-        int[] array = {1,2,1};
-        System.out.println(check(array));
-    }
-    public static boolean check(int[] array){
-        int first = 0;
-        int last = 0;
-        if (array.length<3){
-            return false;
-        }
-        else if (array.length==3){
-            first += array[array.length/2-1];
-            last += array[array.length-1];
-            return first == last;
-        }
-        else {
-            return false;
-        }
+        Scanner scanner = new Scanner(System.in);
 
+        System.out.println("Enter a string: ");
+        String str = scanner.nextLine();
+
+        System.out.println(solution(str));
+    }
+    public static String solution(String str){
+
+        String string = "";
+//        String string = Character.toString(str.charAt(0));
+
+        for (int i = 0; i < str.length(); i++) {
+            if (Character.isLowerCase(str.charAt(i))||i==0){
+                string += Character.toString(str.charAt(i));
+            }
+            else string += " " + Character.toString(str.charAt(i));
+        }
+        return string.toLowerCase();
     }
 }
