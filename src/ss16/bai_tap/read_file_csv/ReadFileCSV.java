@@ -9,11 +9,15 @@ public class ReadFileCSV {
         List<Country> list = new ArrayList<>();
 
         File file = new File(filePath);
+
         FileReader fileReader;
         BufferedReader br;
         String line;
         String[] array;
         try {
+            if (!file.exists()){
+                throw new FileNotFoundException();
+            }
             fileReader = new FileReader(file);
             br = new BufferedReader(fileReader);
             while ((line = br.readLine()) != null) {
@@ -22,8 +26,6 @@ public class ReadFileCSV {
                 list.add(country);
             }
             br.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -60,10 +62,10 @@ public class ReadFileCSV {
         list.add(new Country(8, "TH", "Thailand"));
 
         ReadFileCSV readFileCSV = new ReadFileCSV();
-        readFileCSV.writeFile(list, "src/ss16/bai_tap/read_file_csv/file.csv", false);
+        readFileCSV.writeFile(list, "src/ss16/bai_tap/read_file_csv/file.csv", false );
         List<Country> countryList = readFileCSV.readFile("src/ss16/bai_tap/read_file_csv/file.csv");
-        for (int i = 0; i < countryList.size(); i++) {
-            System.out.println(countryList.get(i));
+        for (Country country : countryList) {
+            System.out.println(country);
         }
 
     }
